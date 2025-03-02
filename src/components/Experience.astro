@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Feberero 2023  - Actualmente ... ",
+        title: "Desarrollador JAVA",
+        company: "Seguros Alfa",
+        description:
+            "Trabajé desarrollando microservicios con Java Spring Boot y gestionando herramientas de Amazon AWS como Lambdas, Step Functions, CloudWatch, API Gateway, DynamoDB y Glue DataBrew. Además, implementé pruebas unitarias con JUnit para garantizar la calidad del software.",
+    },
+    {
+        date: "Junio 2021 - Enero 2023",
+        title: "Desarrollador JAVA Junior",
+        company: "Linexperts",
+        description:
+            "Trabajé en el desarrollo web utilizando HTML, CSS, JavaScript, ReactJS y Axios, así como en la creación de microservicios con Java Spring Boot y NodeJS. También gestioné bases de datos en PostgreSQL y MongoDB, utilicé GitHub para el control de versiones y realicé el seguimiento de tareas con JIRA.",
+    },
+    {
+        date: "Diciembre 2020 - Junio 2021",
+        title: "Aprendiz SENA",
+        company: "Linexperts",
+        description:
+            "Trabajé en el desarrollo de aplicaciones con ReactJS, implementando funcionalidades según los requisitos planteados. Además, realicé el análisis de requerimientos para la construcción de sistemas de información y diseñé los menús, priorizando la usabilidad para mejorar la experiencia del cliente.",
+    },
+];
+---
+
+<ol class="relative mt-16">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
