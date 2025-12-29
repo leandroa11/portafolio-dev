@@ -2,19 +2,30 @@
 import GitHub from "../icons/GitHub.astro";
 import Nodejs from "../icons/Nodejs.astro";
 import React from "../icons/React.astro";
-import Link from "../icons/Link.astro";
+import Kotlin from "../icons/Kotlin.astro";
+import Python from "../icons/Python.astro";
 import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   NEXT: {
     name: "Node.js",
-    class: "bg-black text-white",
+    class: "bg-[#003159] text-white",
     icon: Nodejs,
   },
   REACT: {
     name: "React js",
     class: "bg-[#003159] text-white",
     icon: React,
+  },
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-[#003159] text-white",
+    icon: Kotlin,
+  },
+  PYHTON: {
+    name: "Python",
+    class: "bg-[#003159] text-white",
+    icon: Python,
   },
 };
 
@@ -24,15 +35,33 @@ const PROJECTS = [
     description:
       "Aplicación web para la gestión de ingresos y gastos, permitiendo a los usuarios registrar, analizar y optimizar sus finanzas de manera intuitiva y segura.",
     github: "https://github.com/leandroa11/planmymoney-front-end",
+    githubBack: "https://github.com/leandroa11/planmymoney-back-end",
     image: "/Projects/project1.webp",
     tags: [TAGS.NEXT, TAGS.REACT],
+  },
+  {
+    title: "ForgetShyness",
+    description:
+      "Aplicación nteractiva diseñada para ayudar a las personas a mejorar sus habilidades sociales y perder la timidez mediante dinámicas de conversación, retos y juegos grupales. Combina la diversión del juego con el aprendizaje emocional, creando un entorno seguro y motivador para practicar la comunicación.",
+    github: "https://github.com/leandroa11/forgetshyness",
+    image: "/Projects/forgetshyness.webp",
+    tags: [TAGS.KOTLIN],
+  },
+  {
+    title: "ManosConectadas",
+    description:
+      "Sistema innovador para la detección en tiempo real de señas mediante visión artificial. Utiliza tu cámara web para interactuar con la aplicación. Ideal para aprender y practicar lenguaje de señas, facilitando la comunicación inclusiva.",
+    github: "https://github.com/leandroa11/manos-conectadas",
+    githubBack: "https://github.com/leandroa11/hand-sings-cnn",
+    image: "/Projects/ManosConectadas.webp",
+    tags: [TAGS.REACT, TAGS.PYHTON],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github, githubBack }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -71,6 +100,12 @@ const PROJECTS = [
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
                   Code
+                </LinkButton>
+              )}
+              {githubBack && (
+                <LinkButton href={githubBack}>
+                  <GitHub class="size-6" />
+                  Code - BackEnd
                 </LinkButton>
               )}
             </footer>
